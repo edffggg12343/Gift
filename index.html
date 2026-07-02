@@ -1,7 +1,138 @@
-<!doctype html><html><body style='text-align:center;font-family:sans-serif;background:#fff0f5'>
-<h3>🎁✨ Dear Muddu,</h3><p>I couldn't wrap my love in a real box, so I packed a piece of my heart inside this little gift for you. ❤️</p>
-<p>Close your eyes, make a wish, and imagine opening a box filled with all my hugs, kisses, prayers, and endless love.</p>
-<p>Now, open your birthday surprise... because inside it is a message written only for the man who owns my heart. 💖🎂</p>
-<div id='box' onclick='this.style.display="none";card.style.display="block"' style='font-size:140px;cursor:pointer'>🎁<br><small>Touch the gift to open, Ranju ❤️</small></div>
-<div id='card' style='display:none'><h1>Happy Birthday Ranju ❤️</h1><p>Those five extra years only mean God sent you before me to hold my heart.</p><p>I will choose you in every lifetime. 🎂✨</p></div>
-</body></html>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Birthday Surprise for Ranju</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Georgia,serif;
+    background:linear-gradient(135deg,#fff0f5,#ffe4e1);
+    text-align:center;
+    overflow-x:hidden;
+}
+
+.container{
+    padding:40px 20px;
+}
+
+h1{
+    color:#b30059;
+}
+
+.message{
+    max-width:800px;
+    margin:auto;
+    font-size:22px;
+    line-height:1.8;
+    color:#660033;
+}
+
+.gift{
+    font-size:160px;
+    cursor:pointer;
+    transition:0.5s;
+    margin-top:30px;
+}
+
+.gift:hover{
+    transform:scale(1.15) rotate(5deg);
+}
+
+.open{
+    font-size:28px;
+    color:#cc0066;
+    font-weight:bold;
+}
+
+#cardPage{
+    display:none;
+    padding:20px;
+}
+
+#cardPage img{
+    width:95%;
+    max-width:1000px;
+    border-radius:20px;
+    box-shadow:0 0 25px rgba(0,0,0,0.3);
+}
+
+.heart{
+    position:fixed;
+    color:red;
+    animation:float 5s linear infinite;
+    font-size:25px;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="giftPage">
+
+<h1>🎁✨ Dear Muddu,</h1>
+
+<div class="message">
+
+I couldn't wrap my love in a real box, so I packed a piece of my heart inside this little gift for you. ❤️<br><br>
+
+Close your eyes, make a wish, and imagine opening a box filled with all my hugs, kisses, prayers, and endless love.<br><br>
+
+Now, open your birthday surprise... because inside it is a message written only for the man who owns my heart. 💖🎂
+
+</div>
+
+<div class="gift" onclick="openGift()">
+🎁
+</div>
+
+<div class="open">
+Touch the gift to open, Ranju ❤️
+</div>
+
+</div>
+
+
+<div id="cardPage">
+<img src="card.png">
+</div>
+
+
+<script>
+
+function openGift(){
+
+document.getElementById("giftPage").style.display="none";
+document.getElementById("cardPage").style.display="block";
+
+for(let i=0;i<30;i++){
+
+let heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+heart.className="heart";
+
+heart.style.left=Math.random()*100+"%";
+heart.style.animationDuration=(3+Math.random()*4)+"s";
+heart.style.fontSize=(20+Math.random()*30)+"px";
+
+document.body.appendChild(heart);
+}
+
+}
+
+</script>
+
+</body>
+</html>
